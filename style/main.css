@@ -1,0 +1,842 @@
+/* ========================================
+   SHINY MAKER - NEO CYBER CLEAN THEME
+   ==================================== */
+
+/* ---------- PALETA GLOBAL ---------- */
+
+:root {
+    --bg-main: #050816;          /* fondo general */
+    --bg-alt: #0B1020;           /* secciones alternas */
+    --bg-card: #0F172A;          /* tarjetas */
+    --accent: #00F6C8;           /* turquesa neon */
+    --accent-soft: #4ADEFF;      /* azul neon suave */
+    --accent-strong: #39FF14;    /* verde ácido light */
+    --border-soft: rgba(148, 163, 184, 0.4);
+    --text-main: #E5E7EB;
+    --text-muted: #9CA3AF;
+    --text-soft: #6B7280;
+    --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.9);
+}
+
+/* ---------- RESET SUAVE / BASE ---------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #111827 0%, #020617 55%, #000000 100%);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-soft);
+}
+
+/* Quitar margens default de sections un poco */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* ---------- TITULOS GENERALES ---------- */
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    color: #F9FAFB;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    font-size: 0.98rem;
+    color: var(--text-soft);
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* ---------- BOTONES GLOBALES ---------- */
+
+.btn-cosmic {
+    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    border: none;
+    color: #020617;
+    padding: 10px 26px;
+    font-weight: 600;
+    border-radius: 999px;
+    box-shadow: 0 12px 32px rgba(0, 246, 200, 0.4);
+    transition: 0.25s ease;
+}
+
+.btn-cosmic:hover {
+    transform: translateY(-2px) translateX(1px);
+    box-shadow: 0 18px 40px rgba(0, 246, 200, 0.6);
+    color: #020617;
+}
+
+.btn-cosmic-outline {
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 10px 26px;
+    font-weight: 600;
+    transition: 0.25s ease;
+    background: transparent;
+}
+
+.btn-cosmic-outline:hover {
+    background: rgba(15, 23, 42, 0.9);
+    color: #F9FAFB;
+    box-shadow: 0 10px 30px rgba(0, 246, 200, 0.35);
+}
+
+/* Mini botón del portafolio */
+.btn-cosmic-mini {
+    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    padding: 6px 18px;
+    border-radius: 999px;
+    color: #020617;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 10px 26px rgba(0, 246, 200, 0.4);
+    transition: 0.25s ease;
+    display: inline-block;
+    border: none;
+}
+
+.btn-cosmic-mini:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(0, 246, 200, 0.6);
+    color: #020617;
+}
+
+/* ============================
+   NAVBAR - NEO CYBER CLEAN
+============================ */
+
+.cosmic-nav {
+    background: rgba(2, 6, 23, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+/* Logo */
+.cosmic-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #F9FAFB;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.cosmic-logo::after {
+    content: " ◦ dev studio";
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-left: 6px;
+}
+
+/* Links */
+.cosmic-menu .nav-link {
+    color: var(--text-muted);
+    margin-left: 18px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    transition: 0.25s ease;
+    position: relative;
+}
+
+/* Hover */
+.cosmic-menu .nav-link:hover {
+    color: #F9FAFB;
+}
+
+/* Línea neon abajo */
+.cosmic-menu .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+    border-radius: 999px;
+    transition: 0.25s;
+}
+
+.cosmic-menu .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hamburguesa */
+.navbar-toggler {
+    border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* ============================
+   HERO SECTION - NEO CYBER
+============================ */
+
+.hero-section {
+    padding: 130px 0 110px 0;
+    background:
+        radial-gradient(circle at top left, rgba(0, 246, 200, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at bottom right, rgba(74, 222, 255, 0.2) 0%, transparent 55%),
+        var(--bg-main);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto grid / scanlines ligero */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(15, 23, 42, 0.65) 1px, transparent 1px);
+    background-size: 100% 28px;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* Título */
+.hero-title {
+    position: relative;
+    z-index: 1;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #F9FAFB;
+}
+
+.hero-title span {
+    display: block;
+    font-size: 1.1em;
+    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Subtítulo */
+.hero-subtitle {
+    position: relative;
+    z-index: 1;
+    margin-top: 18px;
+    margin-bottom: 32px;
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* Botones */
+.hero-buttons {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mini frase */
+.hero-mini {
+    position: relative;
+    z-index: 1;
+    margin-top: 35px;
+    font-size: 0.85rem;
+    color: var(--accent-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+/* ============================
+   SERVICIOS
+============================ */
+
+.services-section {
+    padding: 80px 0;
+    background: var(--bg-main);
+}
+
+/* Tarjetas de servicio */
+.service-card {
+    background: radial-gradient(circle at top, rgba(0, 246, 200, 0.12), transparent 55%),
+                var(--bg-card);
+    border-radius: 18px;
+    padding: 22px 20px 24px;
+    text-align: left;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    transition: 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at bottom right, rgba(74, 222, 255, 0.18), transparent 55%);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.service-card:hover::after {
+    opacity: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-6px) translateX(2px);
+    box-shadow: 0 26px 55px rgba(15, 23, 42, 0.95);
+}
+
+/* Iconito */
+.service-icon {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+/* Título */
+.service-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #E5E7EB;
+    margin-bottom: 8px;
+}
+
+/* Texto */
+.service-text {
+    font-size: 0.92rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+}
+
+/* ============================
+   PORTAFOLIO
+============================ */
+
+.portfolio-section {
+    padding: 80px 0;
+    background: var(--bg-alt);
+}
+
+/* Tarjeta */
+.portfolio-card {
+    background: var(--bg-card);
+    padding: 18px 14px 24px;
+    border-radius: 18px;
+    text-align: left;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    box-shadow: var(--shadow-soft);
+    transition: 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-6px) translateX(2px);
+    box-shadow: 0 26px 55px rgba(15, 23, 42, 0.95);
+}
+
+/* Imagen / placeholder */
+.portfolio-img .placeholder {
+    width: 100%;
+    height: 110px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(0, 246, 200, 0.15), rgba(74, 222, 255, 0.25));
+}
+
+/* Título del proyecto */
+.portfolio-title {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: #E5E7EB;
+    margin-top: 14px;
+}
+
+/* Texto */
+.portfolio-text {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    margin-bottom: 16px;
+}
+
+/* ============================
+   TARIFAS / PRECIOS
+============================ */
+
+.pricing-section {
+    padding: 80px 0;
+    background: var(--bg-main);
+}
+
+/* Tarjetas */
+.pricing-card {
+    background: var(--bg-card);
+    border-radius: 18px;
+    padding: 22px 18px 22px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    text-align: left;
+    height: 100%;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(0, 246, 200, 0.18), transparent 55%);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.pricing-card:hover::after {
+    opacity: 1;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px) translateX(2px);
+    box-shadow: 0 26px 55px rgba(15, 23, 42, 0.95);
+}
+
+/* Título plan */
+.pricing-title {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: #E5E7EB;
+    margin-bottom: 6px;
+}
+
+/* Precio */
+.pricing-price {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    margin-bottom: 10px;
+}
+
+.pricing-price span {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--accent-soft);
+}
+
+/* Lista */
+.pricing-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.pricing-list li {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 16px;
+}
+
+.pricing-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.8rem;
+    color: var(--accent);
+}
+
+/* Caja explicación */
+.quote-box {
+    background: var(--bg-card);
+    border-radius: 18px;
+    padding: 22px 20px;
+    border: 1px solid rgba(148, 163, 184, 0.55);
+    box-shadow: var(--shadow-soft);
+}
+
+.quote-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #E5E7EB;
+    margin-bottom: 10px;
+}
+
+.quote-text {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    margin-bottom: 10px;
+}
+
+.quote-steps {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    padding-left: 18px;
+    margin-bottom: 10px;
+}
+
+.quote-steps li {
+    margin-bottom: 4px;
+}
+
+.quote-note {
+    font-size: 0.85rem;
+    color: var(--accent-soft);
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* ============================
+   PROCESO DE TRABAJO
+============================ */
+
+.process-section {
+    padding: 80px 0;
+    background: var(--bg-alt);
+}
+
+/* Tarjeta */
+.process-card {
+    position: relative;
+    background: var(--bg-card);
+    border-radius: 18px;
+    padding: 26px 20px 20px;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    box-shadow: var(--shadow-soft);
+    text-align: left;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Badge número */
+.process-badge {
+    position: absolute;
+    top: 5px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: radial-gradient(circle at top, var(--accent-soft), var(--accent));
+    color: #020617;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Título */
+.process-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #E5E7EB;
+    margin-bottom: 8px;
+}
+
+/* Texto */
+.process-text {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+}
+
+/* Detalle */
+.process-card::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 246, 200, 0.35);
+    opacity: 0.6;
+}
+
+/* ============================
+   SOBRE MÍ / MANIFIESTO
+============================ */
+
+.about-section {
+    padding: 80px 0;
+    background: var(--bg-main);
+}
+
+.about-intro {
+    font-size: 1.02rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.about-intro span {
+    color: var(--accent-soft);
+    font-weight: 600;
+}
+
+/* Párrafos */
+.about-text {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* Frase mini */
+.about-mini {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--accent-soft);
+    font-style: italic;
+}
+
+/* Caja lateral */
+.about-side-box {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 22px 20px 18px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Título lateral */
+.about-side-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #E5E7EB;
+    margin-bottom: 10px;
+}
+
+/* Lista */
+.about-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 12px;
+}
+
+.about-list li {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 16px;
+}
+
+.about-list li::before {
+    content: "▹";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0.8rem;
+    color: var(--accent-soft);
+}
+
+/* Gatitos */
+.about-cats {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed rgba(148, 163, 184, 0.6);
+}
+
+.about-cats-text {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+/* ============================
+   CONTACTO
+============================ */
+
+.contact-section {
+    padding: 80px 0;
+    background: var(--bg-alt);
+}
+
+/* Caja formulario */
+.contact-box {
+    background: var(--bg-card);
+    padding: 26px 22px 26px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+/* Inputs */
+.contact-input {
+    border-radius: 14px;
+    padding: 10px 12px;
+    border: 1px solid rgba(148, 163, 184, 0.55);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background: #020617;
+}
+
+.contact-input:focus {
+    border-color: var(--accent-soft);
+    box-shadow: 0 0 0 2px rgba(74, 222, 255, 0.25);
+    background: #020617;
+}
+
+/* Divider */
+.contact-divider {
+    text-align: center;
+    margin: 22px 0 16px;
+    position: relative;
+}
+
+.contact-divider span {
+    font-size: 0.86rem;
+    background: var(--bg-card);
+    padding: 0 12px;
+    color: var(--text-muted);
+}
+
+.contact-divider::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(148, 163, 184, 0.6);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp {
+    background: #22c55e;
+    color: #020617;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 999px;
+    box-shadow: 0 10px 26px rgba(34, 197, 94, 0.5);
+    transition: 0.25s;
+    text-decoration: none;
+    border: none;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(34, 197, 94, 0.7);
+}
+
+/* Nota final */
+.contact-note {
+    color: var(--accent-soft);
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* ============================
+   FOOTER
+============================ */
+
+.footer-section {
+    padding: 50px 0 22px;
+    background: #020617;
+    border-top: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+/* Logo */
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #F9FAFB;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Desc */
+.footer-desc {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+}
+
+/* Título */
+.footer-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+/* Enlaces */
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.footer-links li {
+    margin-bottom: 4px;
+}
+
+.footer-links a {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    transition: 0.25s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* Divider */
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(31, 41, 55, 0.9);
+    margin: 26px 0 18px;
+}
+
+/* Copy */
+.footer-copy {
+    font-size: 0.8rem;
+    color: var(--text-soft);
+    opacity: 0.8;
+}
+
+/* ============================
+   RESPONSIVE SUAVE
+============================ */
+
+@media (max-width: 767.98px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .services-section,
+    .portfolio-section,
+    .pricing-section,
+    .process-section,
+    .about-section,
+    .contact-section {
+        padding: 70px 0;
+    }
+}
